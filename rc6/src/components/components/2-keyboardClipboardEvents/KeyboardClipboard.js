@@ -7,6 +7,11 @@ const KeyboardClipboard = () => {
     // console.log(e.keyCode);
     e.target.value = e.target.value.toUpperCase();
     e.keyCode === 13 && alert('Entera basildi');
+  
+  };
+
+  const handleAreaPaste = (e) =>{
+    e.target.value = e.target.value.toLowerCase();
   };
   return (
     <div className="container text-center">
@@ -18,6 +23,8 @@ const KeyboardClipboard = () => {
         onKeyDown={handleKeyDown}
       />
       <p className="text-start m-4">{inputValue}</p>
+
+      <textarea name="area" id="area" cols="50" rows="10" onPaste={handleAreaPaste}></textarea>
     </div>
   );
 };
