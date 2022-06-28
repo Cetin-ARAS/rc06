@@ -11,7 +11,8 @@ const KeyboardClipboard = () => {
   };
 
   const handleAreaPaste = (e) =>{
-    e.target.value = e.target.value.toLowerCase();
+    e.target.value = e.clipboardData.getData('text').toLowerCase();
+    e.preventDefault();
   };
   return (
     <div className="container text-center">
